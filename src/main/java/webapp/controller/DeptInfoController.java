@@ -68,8 +68,12 @@ public class DeptInfoController extends HttpServlet {
 		log.info("dept called.......");
 		out.println("<h1>dept called.....</h1>");
 		
+		String param = request.getParameter("deptno");
+		int deptno = Integer.parseInt(param);
+		
+		
 		DeptInfoService service = factory.getBean(DeptInfoService.class);
-		Dept dept = service.getDeptInfo(10);
+		Dept dept = service.getDeptInfo(deptno);
 		
 		request.setAttribute("dept", dept);
 		

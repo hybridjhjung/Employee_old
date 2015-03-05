@@ -29,8 +29,8 @@
 	%>
 	<hr>
 	<c:forEach var="e" items="${requestScope.dept.emps}">
-		${pageScope.e.empno},
-		${pageScope.e.ename},
+		${pageScope.e.empno}, 
+		${pageScope.e.ename}, 
 		${pageScope.e.job}
 	</c:forEach>
 	

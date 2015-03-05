@@ -1,5 +1,7 @@
 package webapp.service;
 
+import java.util.List;
+
 import javax.sql.DataSource;
 
 import webapp.dao.DeptDao;
@@ -29,6 +31,12 @@ public class DeptInfoService {
 		Dept dept = deptdao.selectByDeptnoWithEmps(deptno);
 				
 		return dept;
+	}
+	public List<Dept> getDeptInfoAll() {
+		
+		List<Dept> list = deptdao.selectAll();
+		
+		return list;
 	}
 	
 }

@@ -96,11 +96,17 @@ public class SpringJdbcDeptDao implements DeptDao {
 
 	@Override
 	public List<Dept> selectAll() {
-		return null;
+		log.info("###########");
+		log.info("selectAll()");
+		log.info("###########");
+		
+		JdbcTemplate template = new JdbcTemplate(dataSource);
+		
+		return template.query(SELECT_ALL, new BeanPropertyRowMapper<Dept>(Dept.class));
 	}
 
 	@Override
-	public List<Dept> selectAllWithEmas() {
+	public List<Dept> selectAllWithEmps() {
 		return null;
 	}
 }

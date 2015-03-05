@@ -14,6 +14,10 @@ public interface DeptDao {
 													+ " on d.deptno = e.deptno"
 													+ " where d.deptno = ?";
 	
+	final static String SELECT_ALL = "select * from dept";
+	final static String SELECT_ALL_WITH_EMPS = "select *"
+											  + " from dept d left join emp e"
+											  + " on d.deptno = e.deptno";
 	
 	public void setDataSource(DataSource ds);
 	
@@ -21,6 +25,6 @@ public interface DeptDao {
 	public Dept selectByDeptnoWithEmps(Integer deptno);
 	
 	public List<Dept> selectAll();
-	public List<Dept> selectAllWithEmas();
+	public List<Dept> selectAllWithEmps();
 	
 }
